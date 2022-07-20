@@ -17,6 +17,7 @@ function ItemCard({ item, onDeleteItem }) {
             <h3>{name}</h3>
             <img src={image} alt={name} />
             <span>${price}/week</span>
+            <br></br>
             <span>Location: {location}</span>
             <button onClick={() => setIsRented(true)}>{isRented ? "In Cart" : "Add to Cart"}</button>
             <button>Details</button>
