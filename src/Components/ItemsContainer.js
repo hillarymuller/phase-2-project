@@ -15,8 +15,7 @@ function ItemsContainer() {
 
     return (
         <div>
-            <h1>item container</h1>
-            {itemCards}
+            <ul className="cards">{itemCards}</ul>
         </div>
     );
 }

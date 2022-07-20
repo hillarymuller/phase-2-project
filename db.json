@@ -8,7 +8,8 @@
         "details": "For children 30-50 lbs, retail $59.95",
         "location": "St. Paul, MN",
         "price": 10,
-        "category": "Beach"
+        "category": "Beach",
+        "rented": false
       },
       {
         "id": 2,
@@ -18,7 +19,8 @@
         "details": "An easier, ligther way to navigate the airport, retail $76.95",
         "location": "Modesto, CA",
         "price": 8,
-        "category": "Travel"
+        "category": "Travel",
+        "rented": false
       },
       {
         "id": 3,
@@ -28,7 +30,8 @@
         "details": "Best way to keep sand out of the car & your suitcases, retail $23.99",
         "location": "Bakersfield, CA",
         "price": 5,
-        "category": "Beach"
+        "category": "Beach",
+        "rented": false
       },
       {
         "id": 4,
@@ -38,7 +41,8 @@
         "details": "Ages 6 months to 3 years, retail $44.99",
         "location": "Tucson, AZ",
         "price": 10,
-        "category": "Mealtime"
+        "category": "Mealtime",
+        "rented": false
       },
       {
         "id": 5,
@@ -48,7 +52,8 @@
         "details": "Easy setup & easy to clean, retail $269.99",
         "location": "St.Louis, MO",
         "price": 30,
-        "category": "Bedtime"
+        "category": "Bedtime",
+        "rented": false
       },
       {
         "id": 6,
@@ -58,7 +63,8 @@
         "details": "Easy setup, SPF 50+, provides shade for 3+ people, retail $64.99",
         "location": "Charlotte, NC",
         "price": 10,
-        "category": "Beach"
+        "category": "Beach",
+        "rented": false
       },
       {
         "id": 7,
@@ -68,7 +74,8 @@
         "details": "Wireless, temperature monitor, 960ft range, night vision, retail $74.99",
         "location": "Corpus Christi, TX",
         "price": 10,
-        "category": "Bedtime"
+        "category": "Bedtime",
+        "rented": false
       },
       {
         "id": 8,
@@ -78,7 +85,8 @@
         "details": "Three soothing sounds with volume control, USB rechargeable, retail $29.99",
         "location": "Seattle, WA",
         "price": 5,
-        "category": "Bedtime"
+        "category": "Bedtime",
+        "rented": false
       },
       {
         "id": 9,
@@ -88,7 +96,8 @@
         "details": "Age 4+ months, monitor pouch, retail $174.99",
         "location": "Montgomery, AB",
         "price": 35,
-        "category": "Bedtime"
+        "category": "Bedtime",
+        "rented": false
       },
       {
         "id": 10,
@@ -98,7 +107,8 @@
         "details": "Flexible tripod, battery powered, 3 speeds, retail $27.99",
         "location": "Seattle, WA",
         "price": 5,
-        "category": "Beach"
+        "category": "Beach",
+        "rented": false
       },
       {
         "id": 11,
@@ -108,7 +118,8 @@
         "details": "Machine washable, rated for 12-45lbs, retail $106.99",
         "location": "St. Petersburg, FL",
         "price": 20,
-        "category": "Travel"
+        "category": "Travel",
+        "rented": false
       }
     ],
     "categories": [
