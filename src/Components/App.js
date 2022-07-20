@@ -11,7 +11,6 @@ function App() {
 
   return (
     <div>
-      <h1>Working</h1>
     <Header onSearch={onSearch} />
     <ItemsContainer search={search} />
     </div>

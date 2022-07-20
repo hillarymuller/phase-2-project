@@ -1,131 +1,131 @@
 {
-    "items": [
-      {
-        "id": 1,
-        "name": "Stohlquist Child Life Jacket",
-        "image": "https://m.media-amazon.com/images/I/71aQYSUIY7S._AC_SY879_.jpg",
-        "isFavorite": false,
-        "details": "For children 30-50 lbs, retail $59.95",
-        "location": "St. Paul, MN",
-        "price": 10,
-        "category": "Beach",
-        "rented": false
-      },
-      {
-        "id": 2,
-        "name": "Holm Car Seat Travel Cart",
-        "image": "https://m.media-amazon.com/images/I/71XuVcQ7AUL._SX679_.jpg",
-        "isFavorite": false,
-        "details": "An easier, ligther way to navigate the airport, retail $76.95",
-        "location": "Modesto, CA",
-        "price": 8,
-        "category": "Travel",
-        "rented": false
-      },
-      {
-        "id": 3,
-        "name": "Beach Sandy Sand Removal Brush",
-        "image": "https://m.media-amazon.com/images/I/71ytB4dHJyL._AC_SX679_.jpg",
-        "isFavorite": false,
-        "details": "Best way to keep sand out of the car & your suitcases, retail $23.99",
-        "location": "Bakersfield, CA",
-        "price": 5,
-        "category": "Beach",
-        "rented": false
-      },
-      {
-        "id": 4,
-        "name": "hiccapop Travel Booster Seat",
-        "image": "https://m.media-amazon.com/images/I/81LPoUsJakL._SX679_.jpg",
-        "isFavorite": false,
-        "details": "Ages 6 months to 3 years, retail $44.99",
-        "location": "Tucson, AZ",
-        "price": 10,
-        "category": "Mealtime",
-        "rented": false
-      },
-      {
-        "id": 5,
-        "name": "4moms Portable Playard with Bassinet",
-        "image": "https://m.media-amazon.com/images/I/717Nc94WkoS._SX679_.jpg",
-        "isFavorite": false,
-        "details": "Easy setup & easy to clean, retail $269.99",
-        "location": "St.Louis, MO",
-        "price": 30,
-        "category": "Bedtime",
-        "rented": false
-      },
-      {
-        "id": 6,
-        "name": "Pacific Breeze Beach Tent",
-        "image": "https://m.media-amazon.com/images/I/71Gfya62hEL._AC_SX679_.jpg",
-        "isFavorite": false,
-        "details": "Easy setup, SPF 50+, provides shade for 3+ people, retail $64.99",
-        "location": "Charlotte, NC",
-        "price": 10,
-        "category": "Beach",
-        "rented": false
-      },
-      {
-        "id": 7,
-        "name": "ANMEATE Baby Monitor",
-        "image": "https://m.media-amazon.com/images/I/61IbxWi6FzL._AC_SX679_.jpg",
-        "isFavorite": false,
-        "details": "Wireless, temperature monitor, 960ft range, night vision, retail $74.99",
-        "location": "Corpus Christi, TX",
-        "price": 10,
-        "category": "Bedtime",
-        "rented": false
-      },
-      {
-        "id": 8,
-        "name": "Yogasleep Portable Sound Machine",
-        "image": "https://m.media-amazon.com/images/I/717omcT-e+L._AC_SX679_.jpg",
-        "isFavorite": false,
-        "details": "Three soothing sounds with volume control, USB rechargeable, retail $29.99",
-        "location": "Seattle, WA",
-        "price": 5,
-        "category": "Bedtime",
-        "rented": false
-      },
-      {
-        "id": 9,
-        "name": "SlumberPod Portable Blackout Crib Cover",
-        "image": "https://m.media-amazon.com/images/I/71jjZDLilxL._AC_SX679_.jpg",
-        "isFavorite": false,
-        "details": "Age 4+ months, monitor pouch, retail $174.99",
-        "location": "Montgomery, AB",
-        "price": 35,
-        "category": "Bedtime",
-        "rented": false
-      },
-      {
-        "id": 10,
-        "name": "WiHoo Mini Stroller Fan",
-        "image": "https://m.media-amazon.com/images/I/61qvkFP+JfS._AC_SX679_.jpg",
-        "isFavorite": false,
-        "details": "Flexible tripod, battery powered, 3 speeds, retail $27.99",
-        "location": "Seattle, WA",
-        "price": 5,
-        "category": "Beach",
-        "rented": false
-      },
-      {
-        "id": 11,
-        "name": "Ergobaby Baby Carrier",
-        "image": "https://m.media-amazon.com/images/I/816qfUx8J6L._SX679_.jpg",
-        "isFavorite": false,
-        "details": "Machine washable, rated for 12-45lbs, retail $106.99",
-        "location": "St. Petersburg, FL",
-        "price": 20,
-        "category": "Travel",
-        "rented": false
-      }
-    ],
-    "categories": [
-        "Beach",
-        "Bedtime",
-        "Mealtime",
-        "Travel"
-    ]
-  }
+  "items": [
+    {
+      "id": 1,
+      "name": "Stohlquist Child Life Jacket",
+      "image": "https://m.media-amazon.com/images/I/71aQYSUIY7S._AC_SY879_.jpg",
+      "isFavorite": false,
+      "details": "For children 30-50 lbs, retail $59.95",
+      "location": "St. Paul, MN",
+      "price": 10,
+      "category": "Beach",
+      "rented": false
+    },
+    {
+      "id": 2,
+      "name": "Holm Car Seat Travel Cart",
+      "image": "https://m.media-amazon.com/images/I/71XuVcQ7AUL._SX679_.jpg",
+      "isFavorite": false,
+      "details": "An easier, ligther way to navigate the airport, retail $76.95",
+      "location": "Modesto, CA",
+      "price": 8,
+      "category": "Travel",
+      "rented": false
+    },
+    {
+      "id": 3,
+      "name": "Beach Sandy Sand Removal Brush",
+      "image": "https://m.media-amazon.com/images/I/71ytB4dHJyL._AC_SX679_.jpg",
+      "isFavorite": false,
+      "details": "Best way to keep sand out of the car & your suitcases, retail $23.99",
+      "location": "Bakersfield, CA",
+      "price": 5,
+      "category": "Beach",
+      "rented": false
+    },
+    {
+      "id": 4,
+      "name": "hiccapop Travel Booster Seat",
+      "image": "https://m.media-amazon.com/images/I/81LPoUsJakL._SX679_.jpg",
+      "isFavorite": false,
+      "details": "Ages 6 months to 3 years, retail $44.99",
+      "location": "Tucson, AZ",
+      "price": 10,
+      "category": "Mealtime",
+      "rented": false
+    },
+    {
+      "id": 5,
+      "name": "4moms Portable Playard with Bassinet",
+      "image": "https://m.media-amazon.com/images/I/717Nc94WkoS._SX679_.jpg",
+      "isFavorite": false,
+      "details": "Easy setup & easy to clean, retail $269.99",
+      "location": "St.Louis, MO",
+      "price": 30,
+      "category": "Bedtime",
+      "rented": false
+    },
+    {
+      "id": 6,
+      "name": "Pacific Breeze Beach Tent",
+      "image": "https://m.media-amazon.com/images/I/71Gfya62hEL._AC_SX679_.jpg",
+      "isFavorite": false,
+      "details": "Easy setup, SPF 50+, provides shade for 3+ people, retail $64.99",
+      "location": "Charlotte, NC",
+      "price": 10,
+      "category": "Beach",
+      "rented": false
+    },
+    {
+      "id": 7,
+      "name": "ANMEATE Baby Monitor",
+      "image": "https://m.media-amazon.com/images/I/61IbxWi6FzL._AC_SX679_.jpg",
+      "isFavorite": false,
+      "details": "Wireless, temperature monitor, 960ft range, night vision, retail $74.99",
+      "location": "Corpus Christi, TX",
+      "price": 10,
+      "category": "Bedtime",
+      "rented": false
+    },
+    {
+      "id": 8,
+      "name": "Yogasleep Portable Sound Machine",
+      "image": "https://m.media-amazon.com/images/I/717omcT-e+L._AC_SX679_.jpg",
+      "isFavorite": false,
+      "details": "Three soothing sounds with volume control, USB rechargeable, retail $29.99",
+      "location": "Seattle, WA",
+      "price": 5,
+      "category": "Bedtime",
+      "rented": false
+    },
+    {
+      "id": 9,
+      "name": "SlumberPod Portable Blackout Crib Cover",
+      "image": "https://m.media-amazon.com/images/I/71jjZDLilxL._AC_SX679_.jpg",
+      "isFavorite": false,
+      "details": "Age 4+ months, monitor pouch, retail $174.99",
+      "location": "Montgomery, AB",
+      "price": 35,
+      "category": "Bedtime",
+      "rented": false
+    },
+    {
+      "id": 10,
+      "name": "WiHoo Mini Stroller Fan",
+      "image": "https://m.media-amazon.com/images/I/61qvkFP+JfS._AC_SX679_.jpg",
+      "isFavorite": false,
+      "details": "Flexible tripod, battery powered, 3 speeds, retail $27.99",
+      "location": "Seattle, WA",
+      "price": 5,
+      "category": "Beach",
+      "rented": false
+    },
+    {
+      "id": 11,
+      "name": "Ergobaby Baby Carrier",
+      "image": "https://m.media-amazon.com/images/I/816qfUx8J6L._SX679_.jpg",
+      "isFavorite": false,
+      "details": "Machine washable, rated for 12-45lbs, retail $106.99",
+      "location": "St. Petersburg, FL",
+      "price": 20,
+      "category": "Travel",
+      "rented": false
+    }
+  ],
+  "categories": [
+    "Beach",
+    "Bedtime",
+    "Mealtime",
+    "Travel"
+  ]
+}
