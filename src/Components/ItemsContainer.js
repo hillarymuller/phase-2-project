@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ItemCard from "./ItemCard";
 
-function ItemsContainer() {
+function ItemsContainer({ search }) {
     const [items, setItems] = useState([]);
 
     useEffect(() => {
@@ -11,7 +11,11 @@ function ItemsContainer() {
         .catch(err => console.log(err))
     }, []);
     
-    const itemCards = items.map(item => (<ItemCard item={item} key={item.id} />));
+    
+
+    const itemCards = items.filter(item => item.name.toLowerCase().includes(search.toLowerCase()) 
+    || item.details.toLowerCase().includes(search.toLowerCase()))
+    .map(item => (<ItemCard item={item} key={item.id} />));
 
     return (
         <div>
