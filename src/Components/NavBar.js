@@ -4,7 +4,7 @@ import Cart from "./Cart";
 function NavBar() {
     return(
         <div>
-        <h1>NavBar</h1>
+        <h1>Navigate to other pages here</h1>
         <Cart />
         </div>
     )

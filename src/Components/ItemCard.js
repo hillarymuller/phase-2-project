@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 function ItemCard({ item, onDeleteItem }) {
-    const { name, price, image, location, id } = item;
+    const { name, price, image, location, id, category } = item;
     const [isRented, setIsRented] = useState(false);
 
     function handleDelete() {
@@ -19,6 +19,9 @@ function ItemCard({ item, onDeleteItem }) {
             <span>${price}/week</span>
             <br></br>
             <span>Location: {location}</span>
+            <br></br>
+            <span>Category: {category}</span>
+            <br></br>
             <button onClick={() => setIsRented(true)}>{isRented ? "In Cart" : "Add to Cart"}</button>
             <button>Details</button>
             <button onClick={handleDelete}>Delete</button>

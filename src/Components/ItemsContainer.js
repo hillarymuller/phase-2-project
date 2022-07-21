@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ItemCard from "./ItemCard";
 
-function ItemsContainer({ search }) {
+function ItemsContainer({ search, category }) {
     const [items, setItems] = useState([]);
     const [sortBy, setSortBy] = useState("id");
 
@@ -28,11 +28,13 @@ function ItemsContainer({ search }) {
             return itemA.location.localeCompare(itemB.location);
         }
     })
+    .filter(item => item.category.toLowerCase() === category || category === "all")
     .map(item => (<ItemCard item={item} key={item.id} onDeleteItem={onDeleteItem} />));
 
     return (
         <div>
             <button>Add New Item</button>
+            <br></br>
             <button onClick={() => setSortBy('location')}>Sort by Location</button>
             <button onClick={() => setSortBy('price')}>Sort by Price</button>
             <button onClick={() => setSortBy('id')}>Sort by Default</button>
