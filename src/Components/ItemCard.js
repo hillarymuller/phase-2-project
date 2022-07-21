@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function ItemCard({ item, onDeleteItem }) {
+function ItemCard({ item, onDeleteItem, onAddToCart }) {
     const { name, price, image, location, id, category } = item;
     const [isRented, setIsRented] = useState(false);
 
@@ -10,6 +10,12 @@ function ItemCard({ item, onDeleteItem }) {
         })
         .then(r => r.json())
         .then(() => onDeleteItem(id))
+    }
+
+    function handleAddToCart(e) {
+        e.preventDefault();
+        setIsRented(true);
+        onAddToCart(item);
     }
 
     return (
@@ -22,7 +28,7 @@ function ItemCard({ item, onDeleteItem }) {
             <br></br>
             <span>Category: {category}</span>
             <br></br>
-            <button onClick={() => setIsRented(true)}>{isRented ? "In Cart" : "Add to Cart"}</button>
+            <button onClick={(e) => handleAddToCart(e)}>{isRented ? "In Cart" : "Add to Cart"}</button>
             <button>Details</button>
             <button onClick={handleDelete}>Delete</button>
         </div>

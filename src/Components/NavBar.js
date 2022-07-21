@@ -1,11 +1,10 @@
 import React from "react";
-import Cart from "./Cart";
+
 
 function NavBar() {
     return(
         <div>
-        <h1>Navigate to other pages here</h1>
-        <Cart />
+        <h2>Home - Cart - Add New Listing - Search</h2>
         </div>
     )
 }

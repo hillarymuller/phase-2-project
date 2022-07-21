@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import ItemCard from "./ItemCard";
 
-function ItemsContainer({ search, category }) {
+function ItemsContainer({ search, category, cartView }) {
     const [items, setItems] = useState([]);
     const [sortBy, setSortBy] = useState("id");
+    const [cart, setCart] = useState([]);
 
     useEffect(() => {
         fetch('http://localhost:3000/items')
@@ -15,6 +16,13 @@ function ItemsContainer({ search, category }) {
     function onDeleteItem(id) {
         const updatedItems = items.filter(item => item.id !== id);
         setItems(updatedItems);
+    }
+
+    function onAddToCart(item) {
+        if (!cart.find(listing => listing.name === item.name)) {
+            setCart(currentCart => [...currentCart, item])
+            alert(`${item.name} was successfully added to the cart!`)
+        }
     }
 
     const itemCards = items.filter(item => item.name.toLowerCase().includes(search.toLowerCase()) 
@@ -29,7 +37,9 @@ function ItemsContainer({ search, category }) {
         }
     })
     .filter(item => item.category.toLowerCase() === category || category === "all")
-    .map(item => (<ItemCard item={item} key={item.id} onDeleteItem={onDeleteItem} />));
+    .map(item => (<ItemCard item={item} key={item.id} onDeleteItem={onDeleteItem} onAddToCart={onAddToCart} />));
+   
+    const cartCards = cart.map(item => (<ItemCard item={item} key={item.id} />));
 
     return (
         <div>
@@ -38,7 +48,7 @@ function ItemsContainer({ search, category }) {
             <button onClick={() => setSortBy('location')}>Sort by Location</button>
             <button onClick={() => setSortBy('price')}>Sort by Price</button>
             <button onClick={() => setSortBy('id')}>Sort by Default</button>
-            <ul className="cards">{itemCards}</ul>
+            <ul className="cards">{!!cartView ? cartCards : itemCards}</ul>
         </div>
     );
 }

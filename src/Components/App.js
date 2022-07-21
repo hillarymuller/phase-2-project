@@ -5,6 +5,7 @@ import ItemsContainer from "./ItemsContainer";
 function App() {
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("all");
+  const [cartView, setCartView] = useState(false);
 
   const onSearch = (currentSearch) => {
     setSearch(currentSearch);
@@ -16,8 +17,9 @@ function App() {
 
   return (
     <div>
+      <button onClick={() => setCartView(bool => !bool)}>View Cart</button>
     <Header onSearch={onSearch} onCategoryClick={onCategoryClick} />
-    <ItemsContainer search={search} category={category} />
+    <ItemsContainer search={search} category={category} cartView={cartView} />
     </div>
   );
 }
