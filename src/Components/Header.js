@@ -3,6 +3,7 @@ import Search from "./Search";
 import Filter from "./Filter";
 import NavBar from "./NavBar";
 
+
 function Header({ onSearch, onCategoryClick }) {
     return (
         <div>
@@ -10,6 +11,7 @@ function Header({ onSearch, onCategoryClick }) {
         <NavBar />
         <Search onSearch={onSearch} />
         <Filter onCategoryClick={onCategoryClick} />
+        
         </div>
     )
 }

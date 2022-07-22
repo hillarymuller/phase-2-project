@@ -3,9 +3,12 @@ import Header from "./Header";
 import ItemsContainer from "./ItemsContainer";
 
 function App() {
+
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("all");
-  const [cartView, setCartView] = useState(false);
+  const [bagView, setBagView] = useState(false);
+
+
 
   const onSearch = (currentSearch) => {
     setSearch(currentSearch);
@@ -15,11 +18,12 @@ function App() {
     setCategory(currentCategory);
   }
 
+
   return (
     <div>
-      <button onClick={() => setCartView(bool => !bool)}>View Cart</button>
+      <button onClick={() => setBagView(bool => !bool)}>View Diaper Bag</button>
     <Header onSearch={onSearch} onCategoryClick={onCategoryClick} />
-    <ItemsContainer search={search} category={category} cartView={cartView} />
+    <ItemsContainer search={search} category={category} bagView={bagView} />
     </div>
   );
 }

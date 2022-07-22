@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import ItemCard from "./ItemCard";
+import NewItemForm from "./NewItemForm";
 
-function ItemsContainer({ search, category, cartView }) {
+function ItemsContainer({ search, category, bagView }) {
     const [items, setItems] = useState([]);
     const [sortBy, setSortBy] = useState("id");
-    const [cart, setCart] = useState([]);
+    const [bag, setBag] = useState([]);
 
     useEffect(() => {
         fetch('http://localhost:3000/items')
@@ -13,16 +14,21 @@ function ItemsContainer({ search, category, cartView }) {
         .catch(err => console.log(err))
     }, []);
     
+
     function onDeleteItem(id) {
         const updatedItems = items.filter(item => item.id !== id);
         setItems(updatedItems);
     }
 
-    function onAddToCart(item) {
-        if (!cart.find(listing => listing.name === item.name)) {
-            setCart(currentCart => [...currentCart, item])
-            alert(`${item.name} was successfully added to the cart!`)
+    function onAddToBag(item) {
+        if (!bag.find(listing => listing.name === item.name)) {
+            setBag(currentBag => [...currentBag, item])
+            alert(`${item.name} was successfully added to your bag!`)
         }
+    }
+
+    function onAddNew(newItem) {
+        setItems([...items, newItem])
     }
 
     const itemCards = items.filter(item => item.name.toLowerCase().includes(search.toLowerCase()) 
@@ -37,18 +43,20 @@ function ItemsContainer({ search, category, cartView }) {
         }
     })
     .filter(item => item.category.toLowerCase() === category || category === "all")
-    .map(item => (<ItemCard item={item} key={item.id} onDeleteItem={onDeleteItem} onAddToCart={onAddToCart} />));
+    .map(item => (<ItemCard item={item} key={item.id} onDeleteItem={onDeleteItem} onAddToBag={onAddToBag} />));
    
-    const cartCards = cart.map(item => (<ItemCard item={item} key={item.id} />));
+    const bagCards = bag.map(item => (<ItemCard item={item} key={item.id} />));
+
+    
 
     return (
         <div>
-            <button>Add New Item</button>
+           <NewItemForm onFormSubmit={onAddNew} />
             <br></br>
             <button onClick={() => setSortBy('location')}>Sort by Location</button>
             <button onClick={() => setSortBy('price')}>Sort by Price</button>
             <button onClick={() => setSortBy('id')}>Sort by Default</button>
-            <ul className="cards">{!!cartView ? cartCards : itemCards}</ul>
+            <ul className="cards">{!!bagView ? bagCards : itemCards}</ul>
         </div>
     );
 }

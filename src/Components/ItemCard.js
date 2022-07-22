@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function ItemCard({ item, onDeleteItem, onAddToCart }) {
+function ItemCard({ item, onDeleteItem, onAddToBag }) {
     const { name, price, image, location, id, category } = item;
     const [isRented, setIsRented] = useState(false);
 
@@ -12,10 +12,10 @@ function ItemCard({ item, onDeleteItem, onAddToCart }) {
         .then(() => onDeleteItem(id))
     }
 
-    function handleAddToCart(e) {
+    function handleAddToBag(e) {
         e.preventDefault();
         setIsRented(true);
-        onAddToCart(item);
+        onAddToBag(item);
     }
 
     return (
@@ -28,7 +28,7 @@ function ItemCard({ item, onDeleteItem, onAddToCart }) {
             <br></br>
             <span>Category: {category}</span>
             <br></br>
-            <button onClick={(e) => handleAddToCart(e)}>{isRented ? "In Cart" : "Add to Cart"}</button>
+            <button onClick={(e) => handleAddToBag(e)}>{isRented ? "In Bag" : "Add to Bag"}</button>
             <button>Details</button>
             <button onClick={handleDelete}>Delete</button>
         </div>
