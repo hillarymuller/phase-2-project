@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Header from "./Header";
 import ItemsContainer from "./ItemsContainer";
+import { Switch, Route } from "react-router-dom";
 
 function App() {
 
@@ -21,9 +22,13 @@ function App() {
 
   return (
     <div>
-      <button onClick={() => setBagView(bool => !bool)}>View Diaper Bag</button>
+    <button onClick={() => setBagView(bool => !bool)}>View Diaper Bag</button>
     <Header onSearch={onSearch} onCategoryClick={onCategoryClick} />
-    <ItemsContainer search={search} category={category} bagView={bagView} />
+    <Switch>
+      <Route exact path="/">
+        <ItemsContainer search={search} category={category} bagView={bagView} />
+      </Route>
+    </Switch>
     </div>
   );
 }

@@ -1,10 +1,19 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 
 function NavBar() {
     return(
         <div>
-        <h2>Home - Cart - Add New Listing - Search</h2>
+            <NavLink to="/">
+                Home
+            </NavLink>
+            <NavLink to="/bag">
+                View Diaper Bag
+            </NavLink>
+            <NavLink to="/items/new">
+                Add New Item
+            </NavLink>
         </div>
     )
 }
