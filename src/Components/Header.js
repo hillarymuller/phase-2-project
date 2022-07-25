@@ -6,7 +6,7 @@ import NavBar from "./NavBar";
 
 function Header({ onSearch, onCategoryClick }) {
     return (
-        <div>
+        <div className="App-header">
         <h1>Vacation Baby Rentals</h1>
         <NavBar />
         <Search onSearch={onSearch} />
