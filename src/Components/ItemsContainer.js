@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ItemCard from "./ItemCard";
 import NewItemForm from "./NewItemForm";
-import { Route, Link } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 
 function ItemsContainer({ search, category, bagView }) {
     const [items, setItems] = useState([]);
@@ -52,20 +52,14 @@ function ItemsContainer({ search, category, bagView }) {
 
     return (
         <div>
-            <Route exact path="/items/new">
+    
                 <NewItemForm onFormSubmit={onAddNew} />
-           </Route>
+       
             <br></br>
             <button onClick={() => setSortBy('location')}>Sort by Location</button>
             <button onClick={() => setSortBy('price')}>Sort by Price</button>
             <button onClick={() => setSortBy('id')}>Sort by Default</button>
-            <ul className="cards">{!!bagView ? 
-            <Route exact path="/bag">
-                {bagCards}
-            </Route> : 
-            <Route exact path="/">
-                {itemCards}
-                </Route>}</ul>
+            <ul className="cards">{!!bagView ? bagCards : itemCards}</ul>
         </div>
     );
 }

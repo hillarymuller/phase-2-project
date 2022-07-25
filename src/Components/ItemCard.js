@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { Route, Link } from "react-router-dom";
+import ItemDetails from "./ItemDetails";
 
 function ItemCard({ item, onDeleteItem, onAddToBag }) {
     const { name, price, image, location, id, category } = item;
@@ -29,7 +31,10 @@ function ItemCard({ item, onDeleteItem, onAddToBag }) {
             <span>Category: {category}</span>
             <br></br>
             <button onClick={(e) => handleAddToBag(e)}>{isRented ? "In Bag" : "Add to Bag"}</button>
-            <button>Details</button>
+            <Route path={`/items/:itemID`}>
+                <ItemDetails />
+            </Route>
+            <Link to={`items/${id}`}>Details</Link>
             <button onClick={handleDelete}>Delete</button>
         </div>
     )

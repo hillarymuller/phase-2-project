@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Header from "./Header";
 import ItemsContainer from "./ItemsContainer";
 import { Switch, Route } from "react-router-dom";
+import NewItemForm from "./NewItemForm";
 
 function App() {
 
@@ -25,6 +26,9 @@ function App() {
     <button onClick={() => setBagView(bool => !bool)}>View Diaper Bag</button>
     <Header onSearch={onSearch} onCategoryClick={onCategoryClick} />
     <Switch>
+    <Route exact path="/items/new">
+        <NewItemForm />
+      </Route>
       <Route exact path="/">
         <ItemsContainer search={search} category={category} bagView={bagView} />
       </Route>
