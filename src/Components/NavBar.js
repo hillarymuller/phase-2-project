@@ -6,8 +6,8 @@ const style = {
     margin: "5% 0 1%",
     padding: "1em",
     textDecoration: "none",
-    color: "black",
-    backgroundColor: "#20B2AA",
+    color: "#011af7",
+    backgroundColor: "#f795be",
     fontWeight: "bold",
     verticalAlign: "center"
 }
@@ -19,7 +19,7 @@ function NavBar() {
             style={style}
             activeStyle={{
                 fontWeight: "bolder",
-                color: "magenta"
+                color: "navy"
             }}
             to="/">
                 Home
@@ -28,7 +28,7 @@ function NavBar() {
             style={style}
             activeStyle={{
                 fontWeight: "bolder",
-                color: "red"
+                color: "navy"
             }}
             to="/bag">
                 View Diaper Bag
@@ -37,7 +37,7 @@ function NavBar() {
             style={style}
             activeStyle={{
                 fontWeight: "bolder",
-                color: "red"
+                color: "navy"
             }}
             to="/items/new">
                 Add New Item
