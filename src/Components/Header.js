@@ -5,7 +5,7 @@ import NavBar from "./NavBar";
 function Header() {
     return (
         <div className="App-header">
-        <h1>Vacation Baby! Rentals</h1>
+        <h1>VACATION BABIES RENTALS</h1>
         <NavBar />
        
         </div>

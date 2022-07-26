@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ItemCard from "./ItemCard";
 import NewItemForm from "./NewItemForm";
-import { Route, Switch } from "react-router-dom";
+import { Route } from "react-router-dom";
 import Filter from "./Filter";
 import Search from "./Search";
 
@@ -12,6 +12,7 @@ function ItemsContainer({ bagView }) {
     const [category, setCategory] = useState("all");
     const [search, setSearch] = useState("");
 
+
     useEffect(() => {
         fetch('http://localhost:3000/items')
         .then(r => r.json())
@@ -20,17 +21,18 @@ function ItemsContainer({ bagView }) {
     }, []);
     
 
+
     function onDeleteItem(id) {
         const updatedItems = items.filter(item => item.id !== id);
         setItems(updatedItems);
     }
 
     function onAddToBag(item) {
+        console.log(item);
         if (!bag.find(listing => listing.name === item.name)) {
             setBag(currentBag => [...currentBag, item])
             alert(`${item.name} was successfully added to your bag!`)
-        }
-    }
+        }}
 
     const onCategoryClick = (currentCategory) => {
         setCategory(currentCategory);
@@ -58,7 +60,19 @@ function ItemsContainer({ bagView }) {
     .filter(item => item.category.toLowerCase() === category || category === "all")
     .map(item => (<ItemCard item={item} key={item.id} onDeleteItem={onDeleteItem} onAddToBag={onAddToBag} />));
    
-    const bagCards = bag.map(item => (<ItemCard item={item} key={item.id} />));
+    const bagCards = bag.filter(item => item.name.toLowerCase().includes(search.toLowerCase()) 
+    || item.details.toLowerCase().includes(search.toLowerCase()))
+    .sort((itemA, itemB) => {
+        if (sortBy === "id") {
+            return itemA.id - itemB.id;
+        } else if (sortBy === "price") {
+            return itemA.price - itemB.price;
+        } else {
+            return itemA.location.localeCompare(itemB.location);
+        }
+    })
+    .filter(item => item.category.toLowerCase() === category || category === "all")
+    .map(item => (<ItemCard item={item} key={item.id} />));
 
     
 
@@ -67,7 +81,9 @@ function ItemsContainer({ bagView }) {
             <Route exact path="/items/new">
             <NewItemForm onFormSubmit={onAddNew} />
             </Route>
+            <br></br>
             <Search onSearch={onSearch} />
+            <br></br>
             <Filter onCategoryClick={onCategoryClick} />
             <br></br>
             <button onClick={() => setSortBy('location')}>Sort by Location</button>

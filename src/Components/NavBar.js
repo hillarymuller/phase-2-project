@@ -9,7 +9,8 @@ const style = {
     color: "#011af7",
     backgroundColor: "#f795be",
     fontWeight: "bold",
-    verticalAlign: "center"
+    verticalAlign: "center", 
+    fontFamily: "Impact, fantasy"
 }
 function NavBar() {
     return(

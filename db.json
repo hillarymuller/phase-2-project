@@ -20,7 +20,7 @@
       "location": "Modesto, CA",
       "price": 8,
       "category": "Travel",
-      "rented": false
+      "rented": true
     },
     {
       "id": 3,
@@ -42,7 +42,7 @@
       "location": "Tucson, AZ",
       "price": 10,
       "category": "Mealtime",
-      "rented": false
+      "rented": true
     },
     {
       "id": 5,
@@ -75,7 +75,7 @@
       "location": "Corpus Christi, TX",
       "price": 10,
       "category": "Bedtime",
-      "rented": false
+      "rented": true
     },
     {
       "id": 8,

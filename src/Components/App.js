@@ -3,7 +3,6 @@ import Header from "./Header";
 import ItemsContainer from "./ItemsContainer";
 import { Switch, Route } from "react-router-dom";
 import NewItemForm from "./NewItemForm";
-import ItemDetails from "./ItemDetails";
 import Home from "./Home";
 import "../App.css"
 
@@ -16,9 +15,6 @@ function App() {
     <Switch>
       <Route path="/items/new">
       <NewItemForm />
-      </Route>
-      <Route path="/items/:id">
-        <ItemDetails />
       </Route>
       <Route exact path="/items">
         <ItemsContainer bagView={bagView} />

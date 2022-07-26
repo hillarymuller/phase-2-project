@@ -3,7 +3,7 @@ import React from "react";
 function Filter({ onCategoryClick }) {
     return (
         <div>
-            <h4>Category</h4>
+           <label>Category:  </label>
             <select name="category" onChange={(e) => onCategoryClick(e.target.value)}>
                 <option value="all">All</option>
                 <option value="beach">Beach</option>

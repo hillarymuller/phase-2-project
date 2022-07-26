@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import { Route, Link } from "react-router-dom";
-import ItemDetails from "./ItemDetails";
+
 
 function ItemCard({ item, onDeleteItem, onAddToBag }) {
-    const { name, price, image, location, id, category } = item;
-    const [isRented, setIsRented] = useState(false);
+    const { name, price, image, location, id, category, details, rented } = item;
+    const [isRented, setIsRented] = useState(rented);
 
     function handleDelete() {
         fetch(`http://localhost:3000/items/${id}`, {
@@ -14,10 +13,20 @@ function ItemCard({ item, onDeleteItem, onAddToBag }) {
         .then(() => onDeleteItem(id))
     }
 
-    function handleAddToBag(e) {
-        e.preventDefault();
-        setIsRented(true);
-        onAddToBag(item);
+    function handleAddToBag() {
+        setIsRented(isRented => !isRented);
+        fetch(`http://localhost:3000/items/${item.id}`, {
+            method: 'PATCH',
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                rented: true,
+            }),
+        })
+        .then(r => r.json())
+        .then(updatedItem => onAddToBag(updatedItem));
+        
     }
 
     return (
@@ -25,16 +34,15 @@ function ItemCard({ item, onDeleteItem, onAddToBag }) {
             <h3>{name}</h3>
             <img src={image} alt={name} />
             <span>${price}/week</span>
-            <br></br>
+            <br></br><br></br>
+            <span>{details}</span>
+            <br></br><br></br>
             <span>Location: {location}</span>
             <br></br>
             <span>Category: {category}</span>
             <br></br>
+            <button>♡</button>
             <button onClick={(e) => handleAddToBag(e)}>{isRented ? "In Bag" : "Add to Bag"}</button>
-            <Route path={`/items/:itemID`}>
-                <ItemDetails />
-            </Route>
-            <Link to={`items/${id}`}>Details</Link>
             <button onClick={handleDelete}>Delete</button>
         </div>
     )
