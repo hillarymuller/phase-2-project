@@ -18,32 +18,59 @@ code {
 .card {
   margin: 1em;
   border-style: solid;
-  border-color: #011af7;
+  border-color: rgb(14, 6, 174);
 }
 
 .card img {
   width: 100%;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1200px) {
   .cards {
     display: flex;
     flex-wrap: wrap;
-  }
-
-  .card {
-    width: calc(33% - 2rem);
-  }
-}
-
-@media (min-width: 1024px) {
-  .card {
-    width: calc(25% - 2rem);
-  }
-}
-
-@media (min-width: 1200px) {
-  .card {
+  }.card {
     width: calc(20% - 2rem);
   }
 }
+
+.button {
+  background-color: #32103c; 
+  border: 4px solid white;
+  border-radius: 50%;
+  color: white;
+  padding: 14px 40px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  font-family: Impact, fantasy;
+}
+
+.card-button {
+    background-color: #f795be; 
+    border: 2px solid white;
+    border-radius: 20px;
+    color: #32103c;
+    padding: 10px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+    font-weight: bold;
+  }
+
+  .search-button {
+    background-color:#32103c;
+    border: 4px solid white;
+    border-radius: 50px;
+    color: white;
+    padding: 4px 4px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+    font-weight: bold;
+  }

@@ -41,9 +41,10 @@ function ItemCard({ item, onDeleteItem, onAddToBag }) {
             <br></br>
             <span>Category: {category}</span>
             <br></br>
-            <button>♡</button>
-            <button onClick={(e) => handleAddToBag(e)}>{isRented ? "In Bag" : "Add to Bag"}</button>
-            <button onClick={handleDelete}>Delete</button>
+            <br></br>
+            <button className="card-button">♡</button>
+            <button className="card-button" onClick={(e) => handleAddToBag(e)}>{isRented ? "In Bag" : "Add to Bag"}</button>
+            <button className="card-button" onClick={handleDelete}>Delete</button>
         </div>
     )
 }

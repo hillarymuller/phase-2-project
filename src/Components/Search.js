@@ -16,7 +16,7 @@ const handleSubmit = (e) => {
             value={currentSearch}
             onChange={(e) => setCurrentSearch(e.target.value)}
             />
-            <button type="submit">Search!</button>
+            <button className="search-button" type="submit">Search!</button>
         </form>
     )
 }

@@ -6,7 +6,7 @@ const style = {
     margin: "5% 0 1%",
     padding: "1em",
     textDecoration: "none",
-    color: "#011af7",
+    color: "rgb(14, 6, 174)",
     backgroundColor: "#f795be",
     fontWeight: "bold",
     verticalAlign: "center", 
@@ -20,7 +20,7 @@ function NavBar() {
             style={style}
             activeStyle={{
                 fontWeight: "bolder",
-                color: "navy"
+                color: "#32103c"
             }}
             to="/">
                 Home
@@ -29,7 +29,7 @@ function NavBar() {
             style={style}
             activeStyle={{
                 fontWeight: "bolder",
-                color: "navy"
+                color: "#32103c"
             }}
             to="/items">
                 Items to Rent
@@ -38,7 +38,7 @@ function NavBar() {
             style={style}
             activeStyle={{
                 fontWeight: "bolder",
-                color: "navy"
+                color: "#32103c"
             }}
             to="/bag">
                 View Diaper Bag
@@ -47,7 +47,7 @@ function NavBar() {
             style={style}
             activeStyle={{
                 fontWeight: "bolder",
-                color: "navy"
+                color: "#32103c"
             }}
             to="/items/new">
                 Add New Item

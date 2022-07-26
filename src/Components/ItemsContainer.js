@@ -86,9 +86,9 @@ function ItemsContainer({ bagView }) {
             <br></br>
             <Filter onCategoryClick={onCategoryClick} />
             <br></br>
-            <button onClick={() => setSortBy('location')}>Sort by Location</button>
-            <button onClick={() => setSortBy('price')}>Sort by Price</button>
-            <button onClick={() => setSortBy('id')}>Sort by Default</button>
+            <button className="button" onClick={() => setSortBy('location')}>Sort by Location</button>
+            <button className="button" onClick={() => setSortBy('price')}>Sort by Price</button>
+            <button className="button" onClick={() => setSortBy('id')}>Sort by Default</button>
             <ul className="cards">{!!bagView ? bagCards : itemCards}</ul>
         </div>
     );
