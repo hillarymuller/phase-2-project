@@ -40,7 +40,7 @@ function NewItemForm({ onFormSubmit }) {
 
     return (
         <section>
-         <h4>Add New Item</h4>
+         <h3>Add New Item</h3>
          <form onSubmit={handleSubmit}>
              <label>
                  Item Name:
@@ -51,6 +51,7 @@ function NewItemForm({ onFormSubmit }) {
                  onChange={handleChange}
                  />
              </label>
+             <br></br><br></br>
              <label>
                  Image Link:
                  <input
@@ -60,6 +61,7 @@ function NewItemForm({ onFormSubmit }) {
                  onChange={handleChange}
                  />
              </label>
+             <br></br><br></br>
              <label>
                  Item Details:
                  <input
@@ -69,6 +71,7 @@ function NewItemForm({ onFormSubmit }) {
                  onChange={handleChange}
                  />
              </label>
+             <br></br><br></br>
              <label>
                  $ per Week:
                  <input
@@ -78,6 +81,7 @@ function NewItemForm({ onFormSubmit }) {
                  onChange={handleChange}
                  />
              </label>
+             <br></br><br></br>
              <label>
                  Location:
                  <input
@@ -87,6 +91,7 @@ function NewItemForm({ onFormSubmit }) {
                  onChange={handleChange}
                  />
              </label>
+             <br></br><br></br>
              <label>
                  Category:
                  <select name="category" value={formData.category} onChange={handleChange}>
@@ -97,6 +102,7 @@ function NewItemForm({ onFormSubmit }) {
                 <option value="travel">Travel</option>
             </select>
              </label>
+             <br></br><br></br>
              <button type="submit">Add Item</button>
          </form>
         </section>

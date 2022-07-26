@@ -30,6 +30,15 @@ function NavBar() {
                 fontWeight: "bolder",
                 color: "navy"
             }}
+            to="/items">
+                Items to Rent
+            </NavLink>
+            <NavLink      exact
+            style={style}
+            activeStyle={{
+                fontWeight: "bolder",
+                color: "navy"
+            }}
             to="/bag">
                 View Diaper Bag
             </NavLink>

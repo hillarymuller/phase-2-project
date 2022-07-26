@@ -14,12 +14,13 @@ code {
 
 .cards {
   list-style: none;
+  justify-content: center;
 }
 
 .card {
-  margin: 1rem;
+  margin: 1em;
   border-style: solid;
-  border-color: #20B2AA;
+  border-color: #011af7;
 }
 
 .card img {

@@ -8,35 +8,23 @@ import Home from "./Home";
 import "../App.css"
 
 function App() {
-
-  const [search, setSearch] = useState("");
-  const [category, setCategory] = useState("all");
   const [bagView, setBagView] = useState(false);
-
-
-
-  const onSearch = (currentSearch) => {
-    setSearch(currentSearch);
-  }
-
-  const onCategoryClick = (currentCategory) => {
-    setCategory(currentCategory);
-  }
-
 
   return (
     <div className="App">
-    <button onClick={() => setBagView(bool => !bool)}>View Diaper Bag</button>
-    <Header onSearch={onSearch} onCategoryClick={onCategoryClick} />
+    <Header />
     <Switch>
-      <Route exact path="/items/new">
-        <NewItemForm />
+      <Route path="/items/new">
+      <NewItemForm />
       </Route>
       <Route path="/items/:id">
         <ItemDetails />
       </Route>
       <Route exact path="/items">
-        <ItemsContainer search={search} category={category} bagView={bagView} />
+        <ItemsContainer bagView={bagView} />
+      </Route>
+      <Route exact path="/bag">
+        <ItemsContainer bagView={!bagView} />
       </Route>
       <Route exact path="/">
         <Home />

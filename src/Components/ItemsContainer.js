@@ -2,11 +2,15 @@ import React, { useState, useEffect } from "react";
 import ItemCard from "./ItemCard";
 import NewItemForm from "./NewItemForm";
 import { Route, Switch } from "react-router-dom";
+import Filter from "./Filter";
+import Search from "./Search";
 
-function ItemsContainer({ search, category, bagView }) {
+function ItemsContainer({ bagView }) {
     const [items, setItems] = useState([]);
     const [sortBy, setSortBy] = useState("id");
     const [bag, setBag] = useState([]);
+    const [category, setCategory] = useState("all");
+    const [search, setSearch] = useState("");
 
     useEffect(() => {
         fetch('http://localhost:3000/items')
@@ -28,9 +32,17 @@ function ItemsContainer({ search, category, bagView }) {
         }
     }
 
+    const onCategoryClick = (currentCategory) => {
+        setCategory(currentCategory);
+      }
+
     function onAddNew(newItem) {
         setItems([...items, newItem])
     }
+
+    const onSearch = (currentSearch) => {
+        setSearch(currentSearch);
+      }
 
     const itemCards = items.filter(item => item.name.toLowerCase().includes(search.toLowerCase()) 
     || item.details.toLowerCase().includes(search.toLowerCase()))
@@ -52,9 +64,11 @@ function ItemsContainer({ search, category, bagView }) {
 
     return (
         <div>
-    
-                <NewItemForm onFormSubmit={onAddNew} />
-       
+            <Route exact path="/items/new">
+            <NewItemForm onFormSubmit={onAddNew} />
+            </Route>
+            <Search onSearch={onSearch} />
+            <Filter onCategoryClick={onCategoryClick} />
             <br></br>
             <button onClick={() => setSortBy('location')}>Sort by Location</button>
             <button onClick={() => setSortBy('price')}>Sort by Price</button>
