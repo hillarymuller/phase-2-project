@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
 
-function ItemCard({ item, onDeleteItem, onAddToBag }) {
-    const { name, price, image, location, id, category, details, rented } = item;
+function ItemCard({ item, onDeleteItem, onAddToBag, onFavorite }) {
+    const { name, price, image, location, id, category, details, rented, isFavorite } = item;
     const [isRented, setIsRented] = useState(rented);
 
     function handleDelete() {
@@ -25,8 +25,21 @@ function ItemCard({ item, onDeleteItem, onAddToBag }) {
             }),
         })
         .then(r => r.json())
-        .then(updatedItem => onAddToBag(updatedItem));
-        
+        .then(updatedItem => onAddToBag(updatedItem)); 
+    }
+
+    function handleFavorite() {
+        fetch(`http://localhost:3000/items/${item.id}`, {
+            method: 'PATCH',
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                isFavorite: !isFavorite,
+            }),
+        })
+        .then(r => r.json())
+        .then(updatedItem => onFavorite(updatedItem))
     }
 
     return (
@@ -42,7 +55,7 @@ function ItemCard({ item, onDeleteItem, onAddToBag }) {
             <span>Category: {category}</span>
             <br></br>
             <br></br>
-            <button className="card-button">♡</button>
+            <button className="card-button" onClick={handleFavorite}>{isFavorite ? "♥" : "♡"}</button>
             <button className="card-button" onClick={(e) => handleAddToBag(e)}>{isRented ? "In Bag" : "Add to Bag"}</button>
             <button className="card-button" onClick={handleDelete}>Delete</button>
         </div>

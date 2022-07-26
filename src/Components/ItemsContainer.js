@@ -46,6 +46,17 @@ function ItemsContainer({ bagView }) {
         setSearch(currentSearch);
       }
 
+      function onFavorite(updatedItem) {
+          const updatedItems = items.map(item => {
+              if (item.id === updatedItem.id) {
+                  return updatedItem;
+              } else {
+                  return item;
+              }
+          });
+          setItems(updatedItems);
+      }
+
     const itemCards = items.filter(item => item.name.toLowerCase().includes(search.toLowerCase()) 
     || item.details.toLowerCase().includes(search.toLowerCase()))
     .sort((itemA, itemB) => {
@@ -58,7 +69,7 @@ function ItemsContainer({ bagView }) {
         }
     })
     .filter(item => item.category.toLowerCase() === category || category === "all")
-    .map(item => (<ItemCard item={item} key={item.id} onDeleteItem={onDeleteItem} onAddToBag={onAddToBag} />));
+    .map(item => (<ItemCard item={item} key={item.id} onDeleteItem={onDeleteItem} onAddToBag={onAddToBag} onFavorite={onFavorite} />));
    
     const bagCards = bag.filter(item => item.name.toLowerCase().includes(search.toLowerCase()) 
     || item.details.toLowerCase().includes(search.toLowerCase()))
