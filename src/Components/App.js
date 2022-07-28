@@ -3,6 +3,7 @@ import Header from "./Header";
 import ItemsContainer from "./ItemsContainer";
 import { Switch, Route } from "react-router-dom";
 
+
 import Home from "./Home";
 import "../App.css"
 
@@ -15,10 +16,10 @@ function App() {
     <div className="App">
     <Header />
     <Switch>
-    <Route exact path="/items">
+      <Route path="/items">
         <ItemsContainer bagView={bagView} />
       </Route>
-      <Route exact path="/bag">
+      <Route path="/bag">
         <ItemsContainer bagView={!bagView} />
       </Route>
       <Route exact path="/">

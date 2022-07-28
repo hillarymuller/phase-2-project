@@ -61,6 +61,9 @@ function ItemsContainer({ bagView }) {
           setItems(updatedItems);
       }
 
+      function onItemDetails(selectedItem) {
+          setItem(selectedItem);
+      }
  
     
    
@@ -99,7 +102,7 @@ function ItemsContainer({ bagView }) {
                 <Route path={`${path}/:itemId`}>
                     <ItemDetails item={item} />
                 </Route>
-                <Route path={path}>
+                <Route exact path={path}>
                     <br></br>
                     <Search onSearch={onSearch} />
                     <br></br>
@@ -109,9 +112,9 @@ function ItemsContainer({ bagView }) {
                     <button className="button" onClick={() => setSortBy('price')}>Sort by Price</button>
                     <button className="button" onClick={() => setSortBy('id')}>Sort by Default</button>
                     <div className="cards">{!!bagView ? bag.map(item =>
-                    (<ItemCard item={item} key={item.id} onDeleteItem={onDeleteItem} onAddToBag={onAddToBag} onFavorite={onFavorite} />)) : 
+                    (<ItemCard item={item} key={item.id} onDeleteItem={onDeleteItem} onAddToBag={onAddToBag} onFavorite={onFavorite} onItemDetails={onItemDetails} />)) : 
                     sortedItems.map(item => 
-                    (<ItemCard item={item} key={item.id} onDeleteItem={onDeleteItem} onAddToBag={onAddToBag} onFavorite={onFavorite} />))}
+                    (<ItemCard item={item} key={item.id} onDeleteItem={onDeleteItem} onAddToBag={onAddToBag} onFavorite={onFavorite} onItemDetails={onItemDetails} />))}
                     </div>     
                 </Route>
             </Switch>

@@ -1,6 +1,9 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 
 function NewItemForm({ onFormSubmit }) {
+    const history = useHistory();
+
     const [formData, setFormData] = useState({
         name: "",
         image: "",
@@ -12,8 +15,13 @@ function NewItemForm({ onFormSubmit }) {
         rented: false,
     });
 
+
     function handleChange(e) {
         setFormData({...formData, [e.target.name]: e.target.value,});
+    }
+
+    function redirect() {
+        history.push("/items");
     }
 
     function handleSubmit(e) {
@@ -36,6 +44,7 @@ function NewItemForm({ onFormSubmit }) {
         })
         .then(r => r.json())
         .then(data => onFormSubmit(data))
+        .then(redirect())
     }
 
     return (

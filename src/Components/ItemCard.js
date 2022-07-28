@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 
 
-function ItemCard({ item, onDeleteItem, onAddToBag, onFavorite }) {
+function ItemCard({ item, onDeleteItem, onAddToBag, onFavorite, onItemDetails }) {
     const { name, price, image, location, id, category, details, rented, isFavorite } = item;
     const [isRented, setIsRented] = useState(rented);
 
@@ -47,6 +47,10 @@ function ItemCard({ item, onDeleteItem, onAddToBag, onFavorite }) {
         .then(updatedItem => onFavorite(updatedItem))
     }
 
+    function handleDetails(item) {
+        onItemDetails(item)
+    }
+
     return (
         <div className="card">
             <h3>{name}</h3>
@@ -60,7 +64,9 @@ function ItemCard({ item, onDeleteItem, onAddToBag, onFavorite }) {
             <span>Category: {category}</span>
             <br></br>
             <br></br>
-            <Link to={`/items/${id}`}>Details</Link>
+            <Link to={`/items/${id}`}>
+                <button onClick={handleDetails}>Details</button>
+            </Link>
             <br></br>
             <button className="card-button" onClick={handleFavorite}>{isFavorite ? "♥" : "♡"}</button>
             <button className="card-button" onClick={(e) => handleAddToBag(e)}>{isRented ? "In Bag" : "Add to Bag"}</button>
