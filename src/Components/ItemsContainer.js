@@ -61,7 +61,8 @@ function ItemsContainer({ bagView }) {
           setItems(updatedItems);
       }
 
-      function onItemDetails(selectedItem) {
+      function onItemDetails(id) {
+          const selectedItem = items.find(item => item.id === id);
           setItem(selectedItem);
       }
  

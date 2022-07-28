@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 
 function ItemCard({ item, onDeleteItem, onAddToBag, onFavorite, onItemDetails }) {
-    const { name, price, image, location, id, category, details, rented, isFavorite } = item;
+    const { name, price, image, location, id, category, rented, isFavorite } = item;
     const [isRented, setIsRented] = useState(rented);
 
     
@@ -47,8 +47,8 @@ function ItemCard({ item, onDeleteItem, onAddToBag, onFavorite, onItemDetails })
         .then(updatedItem => onFavorite(updatedItem))
     }
 
-    function handleDetails(item) {
-        onItemDetails(item)
+    function handleDetails() {
+        onItemDetails(id)
     }
 
     return (
@@ -56,8 +56,6 @@ function ItemCard({ item, onDeleteItem, onAddToBag, onFavorite, onItemDetails })
             <h3>{name}</h3>
             <img src={image} alt={name} />
             <span>${price}/week</span>
-            <br></br><br></br>
-            <span>{details}</span>
             <br></br><br></br>
             <span>Location: {location}</span>
             <br></br>
@@ -71,7 +69,6 @@ function ItemCard({ item, onDeleteItem, onAddToBag, onFavorite, onItemDetails })
             <button className="card-button" onClick={handleFavorite}>{isFavorite ? "♥" : "♡"}</button>
             <button className="card-button" onClick={(e) => handleAddToBag(e)}>{isRented ? "In Bag" : "Add to Bag"}</button>
             <button className="card-button" onClick={handleDelete}>Delete</button>
-           
             </div>
     )
 }
