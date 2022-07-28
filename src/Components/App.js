@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import Header from "./Header";
 import ItemsContainer from "./ItemsContainer";
 import { Switch, Route } from "react-router-dom";
-import NewItemForm from "./NewItemForm";
+
 import Home from "./Home";
 import "../App.css"
+
+
 
 function App() {
   const [bagView, setBagView] = useState(false);
@@ -13,10 +15,7 @@ function App() {
     <div className="App">
     <Header />
     <Switch>
-      <Route path="/items/new">
-      <NewItemForm />
-      </Route>
-      <Route exact path="/items">
+    <Route exact path="/items">
         <ItemsContainer bagView={bagView} />
       </Route>
       <Route exact path="/bag">
@@ -24,6 +23,9 @@ function App() {
       </Route>
       <Route exact path="/">
         <Home />
+      </Route>
+      <Route path="*">
+        <h2>404 Not Found</h2>
       </Route>
     </Switch>
     </div>

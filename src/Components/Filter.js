@@ -6,9 +6,9 @@ function Filter({ onCategoryClick }) {
            <label>Category:  </label>
             <select name="category" onChange={(e) => onCategoryClick(e.target.value)}>
                 <option value="all">All</option>
-                <option value="beach">Beach</option>
-                <option value="bedtime">Bedtime</option>
-                <option value="mealtime">Mealtime</option>
+                <option value="Beach">Beach</option>
+                <option value="Bedtime">Bedtime</option>
+                <option value="Mealtime">Mealtime</option>
                 <option value="Travel">Travel</option>
             </select>
         </div>

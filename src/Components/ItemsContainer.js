@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from "react";
 import ItemCard from "./ItemCard";
 import NewItemForm from "./NewItemForm";
-import { Route } from "react-router-dom";
+import { Route, Switch, useRouteMatch } from "react-router-dom";
 import Filter from "./Filter";
 import Search from "./Search";
+import ItemDetails from "./ItemDetails";
 
 function ItemsContainer({ bagView }) {
     const [items, setItems] = useState([]);
     const [sortBy, setSortBy] = useState("id");
     const [bag, setBag] = useState([]);
     const [category, setCategory] = useState("all");
+    const [item, setItem] = useState({});
     const [search, setSearch] = useState("");
 
 
@@ -17,10 +19,12 @@ function ItemsContainer({ bagView }) {
         fetch('http://localhost:3000/items')
         .then(r => r.json())
         .then(data => setItems(data))
+        .then(setBag(items.filter(item => item.rented)))
         .catch(err => console.log(err))
     }, []);
     
-
+    
+    
 
     function onDeleteItem(id) {
         const updatedItems = items.filter(item => item.id !== id);
@@ -57,50 +61,61 @@ function ItemsContainer({ bagView }) {
           setItems(updatedItems);
       }
 
-    const itemCards = items.filter(item => item.name.toLowerCase().includes(search.toLowerCase()) 
-    || item.details.toLowerCase().includes(search.toLowerCase()))
-    .sort((itemA, itemB) => {
-        if (sortBy === "id") {
-            return itemA.id - itemB.id;
-        } else if (sortBy === "price") {
-            return itemA.price - itemB.price;
-        } else {
-            return itemA.location.localeCompare(itemB.location);
-        }
-    })
-    .filter(item => item.category.toLowerCase() === category || category === "all")
-    .map(item => (<ItemCard item={item} key={item.id} onDeleteItem={onDeleteItem} onAddToBag={onAddToBag} onFavorite={onFavorite} />));
-   
-    const bagCards = bag.filter(item => item.name.toLowerCase().includes(search.toLowerCase()) 
-    || item.details.toLowerCase().includes(search.toLowerCase()))
-    .sort((itemA, itemB) => {
-        if (sortBy === "id") {
-            return itemA.id - itemB.id;
-        } else if (sortBy === "price") {
-            return itemA.price - itemB.price;
-        } else {
-            return itemA.location.localeCompare(itemB.location);
-        }
-    })
-    .filter(item => item.category.toLowerCase() === category || category === "all")
-    .map(item => (<ItemCard item={item} key={item.id} />));
-
+ 
     
+   
+    const filteredItems = items.filter(item => {
+        if(search === "" && category === "all" ) return true
+      
+        if(item.name.toLowerCase().includes(search.toLowerCase()) 
+            || item.details.toLowerCase().includes(search.toLowerCase())){
+              if(category === item.category)return true
+              
+              else if(category === "all") return true
+        }
+      
+        return false
+      });
+
+      const sortedItems = filteredItems.sort((itemA, itemB) => {
+        if (sortBy === "id") {
+            return itemA.id - itemB.id;
+        } else if (sortBy === "price") {
+            return itemA.price - itemB.price;
+        } else {
+            return itemA.location.localeCompare(itemB.location);
+        }
+    })
+
+
+    const { path } = useRouteMatch();
 
     return (
         <div>
-            <Route exact path="/items/new">
-            <NewItemForm onFormSubmit={onAddNew} />
-            </Route>
-            <br></br>
-            <Search onSearch={onSearch} />
-            <br></br>
-            <Filter onCategoryClick={onCategoryClick} />
-            <br></br>
-            <button className="button" onClick={() => setSortBy('location')}>Sort by Location</button>
-            <button className="button" onClick={() => setSortBy('price')}>Sort by Price</button>
-            <button className="button" onClick={() => setSortBy('id')}>Sort by Default</button>
-            <ul className="cards">{!!bagView ? bagCards : itemCards}</ul>
+            <Switch>
+                <Route exact path={`${path}/new`}>
+                    <NewItemForm onFormSubmit={onAddNew} />
+                </Route>
+                <Route path={`${path}/:itemId`}>
+                    <ItemDetails item={item} />
+                </Route>
+                <Route path={path}>
+                    <br></br>
+                    <Search onSearch={onSearch} />
+                    <br></br>
+                    <Filter onCategoryClick={onCategoryClick} />
+                    <br></br>
+                    <button className="button" onClick={() => setSortBy('location')}>Sort by Location</button>
+                    <button className="button" onClick={() => setSortBy('price')}>Sort by Price</button>
+                    <button className="button" onClick={() => setSortBy('id')}>Sort by Default</button>
+                    <div className="cards">{!!bagView ? bag.map(item =>
+                    (<ItemCard item={item} key={item.id} onDeleteItem={onDeleteItem} onAddToBag={onAddToBag} onFavorite={onFavorite} />)) : 
+                    sortedItems.map(item => 
+                    (<ItemCard item={item} key={item.id} onDeleteItem={onDeleteItem} onAddToBag={onAddToBag} onFavorite={onFavorite} />))}
+                    </div>     
+                </Route>
+            </Switch>
+         
         </div>
     );
 }

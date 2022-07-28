@@ -31,7 +31,7 @@
       "location": "Bakersfield, CA",
       "price": 5,
       "category": "Beach",
-      "rented": false
+      "rented": true
     },
     {
       "id": 4,
@@ -131,6 +131,17 @@
       "category": "travel",
       "rented": false,
       "id": 12
+    },
+    {
+      "name": "Mountain Buggy Stroller",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/41gDr4tG5sL._SX300_SY300_QL70_FMwebp_.jpg",
+      "isFavorite": false,
+      "details": "Lightweight, retail $219",
+      "location": "Minneapolis, MN",
+      "price": "20",
+      "category": "travel",
+      "rented": false,
+      "id": 13
     }
   ]
 }
