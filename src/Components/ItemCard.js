@@ -63,7 +63,7 @@ function ItemCard({ item, onDeleteItem, onAddToBag, onFavorite, onItemDetails })
             <br></br>
             <br></br>
             <Link to={`/items/${id}`}>
-                <button onClick={handleDetails}>Details</button>
+                <button className="card-button" onClick={handleDetails}>Details</button>
             </Link>
             <br></br>
             <button className="card-button" onClick={handleFavorite}>{isFavorite ? "♥" : "♡"}</button>

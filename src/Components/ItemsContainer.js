@@ -18,8 +18,10 @@ function ItemsContainer({ bagView }) {
     useEffect(() => {
         fetch('http://localhost:3000/items')
         .then(r => r.json())
-        .then(data => setItems(data))
-        .then(setBag(items.filter(item => item.rented)))
+        .then(data => {
+            setItems(data)
+            setBag(data.filter(item => item.rented))
+        })
         .catch(err => console.log(err))
     }, []);
     

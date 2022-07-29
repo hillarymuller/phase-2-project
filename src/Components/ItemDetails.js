@@ -5,7 +5,7 @@ function ItemDetails({ item }){
     const { itemId } = useParams();
     console.log(item);
     
-    const { name, image, price, details, location, category, isFavorite } = item;
+    const { name, image, price, details, location, category } = item;
 
     return (
        <div className="cards">

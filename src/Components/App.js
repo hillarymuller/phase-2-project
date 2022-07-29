@@ -10,7 +10,7 @@ import "../App.css"
 
 
 function App() {
-  const [bagView, setBagView] = useState(false);
+  
 
 
 
@@ -19,10 +19,10 @@ function App() {
     <Header />
     <Switch>
       <Route path="/items">
-        <ItemsContainer bagView={bagView} />
+        <ItemsContainer bagView={false} />
       </Route>
       <Route path="/bag">
-        <ItemsContainer bagView={!bagView} />
+        <ItemsContainer bagView={true} />
       </Route>
       <Route exact path="/">
         <Home />
