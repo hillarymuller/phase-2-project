@@ -12,6 +12,8 @@ import "../App.css"
 function App() {
   const [bagView, setBagView] = useState(false);
 
+
+
   return (
     <div className="App">
     <Header />

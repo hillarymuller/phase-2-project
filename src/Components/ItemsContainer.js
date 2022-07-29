@@ -46,8 +46,8 @@ function ItemsContainer({ bagView }) {
         setItems([...items, newItem])
     }
 
-    const onSearch = (currentSearch) => {
-        setSearch(currentSearch);
+    const onSearch = (e) => {
+        setSearch(e.target.value);
       }
 
       function onFavorite(updatedItem) {
@@ -94,6 +94,7 @@ function ItemsContainer({ bagView }) {
 
     const { path } = useRouteMatch();
 
+    
     return (
         <div>
             <Switch>
