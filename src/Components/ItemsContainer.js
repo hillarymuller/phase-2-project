@@ -69,55 +69,38 @@ function ItemsContainer({ bagView }) {
       }
  
     
+      function filterList(list) {
+          return list.filter(item => {
+            if(search === "" && category === "all" ) return true
+          
+            if(item.name.toLowerCase().includes(search.toLowerCase()) 
+                || item.details.toLowerCase().includes(search.toLowerCase())){
+                  if(category === item.category)return true
+                  
+                  else if(category === "all") return true
+            }
+          
+            return false
+          });
+      }
+        const filteredItems = filterList(items);
+        const filteredBag = filterList(bag);
    
-    const filteredItems = items.filter(item => {
-        if(search === "" && category === "all" ) return true
-      
-        if(item.name.toLowerCase().includes(search.toLowerCase()) 
-            || item.details.toLowerCase().includes(search.toLowerCase())){
-              if(category === item.category)return true
-              
-              else if(category === "all") return true
-        }
-      
-        return false
-      });
-
-      const sortedItems = filteredItems.sort((itemA, itemB) => {
-        if (sortBy === "id") {
-            return itemA.id - itemB.id;
-        } else if (sortBy === "price") {
-            return itemA.price - itemB.price;
-        } else {
-            return itemA.location.localeCompare(itemB.location);
-        }
-    })
-
-
-    const filteredBag = bag.filter(item => {
-        if(search === "" && category === "all" ) return true
-      
-        if(item.name.toLowerCase().includes(search.toLowerCase()) 
-            || item.details.toLowerCase().includes(search.toLowerCase())){
-              if(category === item.category)return true
-              
-              else if(category === "all") return true
-        }
-      
-        return false
-      });
-
-      const sortedBag = filteredBag.sort((itemA, itemB) => {
-        if (sortBy === "id") {
-            return itemA.id - itemB.id;
-        } else if (sortBy === "price") {
-            return itemA.price - itemB.price;
-        } else {
-            return itemA.location.localeCompare(itemB.location);
-        }
-    })
-
-    const { path } = useRouteMatch();
+        function sortList(list) {
+        return list.sort((itemA, itemB) => {
+            if (sortBy === "id") {
+                return itemA.id - itemB.id;
+            } else if (sortBy === "price") {
+                return itemA.price - itemB.price;
+            } else {
+                return itemA.location.localeCompare(itemB.location);
+            }
+        })
+    }
+        const sortedBag = sortList(filteredBag);
+        const sortedItems = sortList(filteredItems);
+    
+        const { path } = useRouteMatch();
 
     
     return (
