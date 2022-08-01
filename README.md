@@ -15,12 +15,14 @@ The app is in the glorious color scheme of Coppertone® WaterBabies sunscreen we
 - Filter, sort, or search within their bag
 - View details about a single item
 
-Each of the images comes directly from the Amazon listing for that item and I'd like to thank my friend Chelsea Spickelmier for sending me an extensive list of Amazon links for these items & more!
+Each of the images comes directly from an Amazon listing for that item and I'd like to thank my friend Chelsea Spickelmier for sending me an extensive list of Amazon links for these items & more!
 
 Additional features to add in the future could include:
 - Ability to remove items from bag
 - Log in to see saved items & past rentals
 - A home page with testimonials/photos from users
+- Ability to edit items
+- A filter that shows only items the user has favorited
 
 ## Installation
 1. Fork & clone the repo.

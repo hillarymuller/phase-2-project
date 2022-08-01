@@ -9,13 +9,13 @@
       "location": "St. Paul, MN",
       "price": 10,
       "category": "Beach",
-      "rented": true
+      "rented": false
     },
     {
       "id": 2,
       "name": "Holm Car Seat Travel Cart",
       "image": "https://m.media-amazon.com/images/I/71XuVcQ7AUL._SX679_.jpg",
-      "isFavorite": false,
+      "isFavorite": true,
       "details": "An easier, ligther way to navigate the airport, retail $76.95",
       "location": "Modesto, CA",
       "price": 8,
@@ -31,7 +31,7 @@
       "location": "Bakersfield, CA",
       "price": 5,
       "category": "Beach",
-      "rented": true
+      "rented": false
     },
     {
       "id": 4,
@@ -42,7 +42,7 @@
       "location": "Tucson, AZ",
       "price": 10,
       "category": "Mealtime",
-      "rented": true
+      "rented": false
     },
     {
       "id": 5,
@@ -64,7 +64,7 @@
       "location": "Charlotte, NC",
       "price": 10,
       "category": "Beach",
-      "rented": false
+      "rented": true
     },
     {
       "id": 7,
@@ -129,7 +129,7 @@
       "location": "Minneapolis, MN",
       "price": "20",
       "category": "travel",
-      "rented": false,
+      "rented": true,
       "id": 12
     }
   ]
