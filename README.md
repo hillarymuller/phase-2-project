@@ -3,6 +3,7 @@
 ## Description
 I was speaking with a friend the other day about all the special things she has to purchase to travel with her child, only for her to outgrow them by the next vacation. This inspired me to build an app where parents can rent items for vacation so they don't have to spend as much money or have a ton of clutter sitting around. 
 
+
 The app is in the glorious color scheme of Coppertone® WaterBabies sunscreen we used in the 90s and allows users to:
 - Add new items for rent
 - Delete items
@@ -14,6 +15,8 @@ The app is in the glorious color scheme of Coppertone® WaterBabies sunscreen we
 - Search for an item
 - Filter, sort, or search within their bag
 - View details about a single item
+
+Check out a walkthrough of the features of the application here: https://youtu.be/bGKavDYGcH4
 
 Each of the images comes directly from an Amazon listing for that item and I'd like to thank my friend Chelsea Spickelmier for sending me an extensive list of Amazon links for these items & more!
 
