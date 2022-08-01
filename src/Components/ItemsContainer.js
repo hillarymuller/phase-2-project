@@ -94,6 +94,29 @@ function ItemsContainer({ bagView }) {
     })
 
 
+    const filteredBag = bag.filter(item => {
+        if(search === "" && category === "all" ) return true
+      
+        if(item.name.toLowerCase().includes(search.toLowerCase()) 
+            || item.details.toLowerCase().includes(search.toLowerCase())){
+              if(category === item.category)return true
+              
+              else if(category === "all") return true
+        }
+      
+        return false
+      });
+
+      const sortedBag = filteredBag.sort((itemA, itemB) => {
+        if (sortBy === "id") {
+            return itemA.id - itemB.id;
+        } else if (sortBy === "price") {
+            return itemA.price - itemB.price;
+        } else {
+            return itemA.location.localeCompare(itemB.location);
+        }
+    })
+
     const { path } = useRouteMatch();
 
     
@@ -115,7 +138,7 @@ function ItemsContainer({ bagView }) {
                     <button className="button" onClick={() => setSortBy('location')}>Sort by Location</button>
                     <button className="button" onClick={() => setSortBy('price')}>Sort by Price</button>
                     <button className="button" onClick={() => setSortBy('id')}>Sort by Default</button>
-                    <div className="cards">{!!bagView ? bag.map(item =>
+                    <div className="cards">{!!bagView ? sortedBag.map(item =>
                     (<ItemCard item={item} key={item.id} onDeleteItem={onDeleteItem} onAddToBag={onAddToBag} onFavorite={onFavorite} onItemDetails={onItemDetails} />)) : 
                     sortedItems.map(item => 
                     (<ItemCard item={item} key={item.id} onDeleteItem={onDeleteItem} onAddToBag={onAddToBag} onFavorite={onFavorite} onItemDetails={onItemDetails} />))}

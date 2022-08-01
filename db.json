@@ -9,7 +9,7 @@
       "location": "St. Paul, MN",
       "price": 10,
       "category": "Beach",
-      "rented": false
+      "rented": true
     },
     {
       "id": 2,
