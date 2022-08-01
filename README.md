@@ -1,6 +1,26 @@
 # VACATION BABIES RENTALS
 
 ## Description
+I was speaking with a friend the other day about all the special things she has to purchase to travel with her child, only for her to outgrow them by the next vacation. This inspired me to build an app where parents can rent items for vacation so they don't have to spend as much money or have a ton of clutter sitting around. 
+
+The app is in the glorious color scheme of Coppertone® WaterBabies sunscreen we used in the 90s and allows users to:
+- Add new items for rent
+- Delete items
+- Favorite items
+- Add items to their bag
+- View the bag
+- View the entire list of items & sort it by price or location
+- Filter the list of items by category
+- Search for an item
+- Filter, sort, or search within their bag
+- View details about a single item
+
+Each of the images comes directly from the Amazon listing for that item and I'd like to thank my friend Chelsea Spickelmier for sending me an extensive list of Amazon links for these items & more!
+
+Additional features to add in the future could include:
+- Ability to remove items from bag
+- Log in to see saved items & past rentals
+- A home page with testimonials/photos from users
 
 ## Installation
 1. Fork & clone the repo.
